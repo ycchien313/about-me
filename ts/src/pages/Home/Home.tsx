@@ -1,17 +1,19 @@
-import { ReactElement } from 'react';
+import { ReactElement, useRef } from 'react';
+import { Banner } from '@/sections';
 
 export default (): ReactElement => {
+  const homeRef = useRef(null);
+  // const skillsRef = useRef<HTMLDivElement>(null);
+
   return (
-    <>
+    <div ref={homeRef}>
       {/* TODO: 建立 session component */}
-      {/* <Skills /> */}
+      <Banner />
+      {/* <Skills ref={skillsRef} /> */}
       {/* <Works /> */}
       {/* <Experiences /> */}
       {/* <Certificates /> */}
       {/* <Contact /> */}
-
-      {/* TODO: 測試用，待刪除 */}
-      <div style={{ background: 'yellow', width: '100vw', height: '100vh' }} >yellow</div>
-    </>
+    </div>
   );
 };

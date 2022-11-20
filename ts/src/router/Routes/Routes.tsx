@@ -3,8 +3,8 @@ import { RouteObject, useRoutes } from 'react-router-dom';
 import { LayoutBase } from '@/layouts';
 import { Home } from '@/pages';
 
-// import { lazy, Suspense } from "react";
-// const AbcPage = lazy(() => import("pages/xxx.tsx"));
+// import { lazy, Suspense } from 'react';
+// const AbcPage = lazy(() => import('pages/Home/Home'));
 
 const ROUTES: RouteObject[] = [
   {

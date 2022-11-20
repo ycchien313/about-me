@@ -18,6 +18,7 @@ export default defineConfig({
       'layouts': resolve(__dirname, 'src/layouts'),
       'pages': resolve(__dirname, 'src/pages'),
       'router': resolve(__dirname, 'src/router'),
+      'sections': resolve(__dirname, 'src/sections'),
       'theme': resolve(__dirname, 'src/theme'),
     },
   },
