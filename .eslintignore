@@ -1,0 +1,20 @@
+// .eslintignore
+build/*
+dist/*
+public/*
+src/react-app-env.d.ts
+src/reportWebVitals.ts
+src/service-worker.ts
+src/serviceWorkerRegistration.ts
+src/setupTests.ts
+src/assets/*
+src/plugins/firebase/firebase-messaging-sw.js
+
+node_modules
+!.vitepress
+.eslintrc.js
+.eslintrc.cjs
+vite.config.ts
+
+*.svg
+*.css

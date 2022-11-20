@@ -4,22 +4,37 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "pnpm open && vite",
+    "build": "tsc && vite build --base=/about-me/",
     "preview": "vite preview",
+    "open": "open http://localhost:5173",
     "clean:dist": "rm -rf dist",
-    "deploy:gh-pages": "pnpm clean:dist && pnpm build  && gh-pages -d dist"
+    "deploy:gh-pages": "pnpm clean:dist && pnpm build  && gh-pages -d dist",
+    "eslint": "eslint src --ext .ts .tsx"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.14",
+    "@mui/material": "^5.10.12",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@types/node": "^18.11.9",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
     "@vitejs/plugin-react": "^2.2.0",
+    "eslint": "^8.27.0",
+    "eslint-plugin-react": "^7.31.10",
     "gh-pages": "^4.0.0",
+    "prettier-eslint": "^15.0.1",
     "typescript": "^4.6.4",
-    "vite": "^3.2.0"
+    "vite": "^3.2.0",
+    "vite-plugin-eslint": "^1.8.1"
   }
 }

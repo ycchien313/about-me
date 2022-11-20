@@ -14,8 +14,22 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    // 設定資料夾別名從 ./ 開始
+    "baseUrl": ".",
+    // 設定資料夾別名
+    "paths": {
+      "@/*": ["src/*"],
+      "contexts/*": ["src/contexts/*"],
+      "layouts/*": ["src/layouts/*"],
+      "pages/*": ["src/pages/*"],
+      "router/*": ["src/router/*"],
+      "theme": ["src/theme"],
+    },
   },
-  "include": ["src"],
+  // 以下副檔名皆進行編譯
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"],
+  // 以下檔案不進行編譯
+  "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
