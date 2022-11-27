@@ -1,2 +1,1 @@
-import Base from './Mobile';
-export const MobileProvider = Base;
+export * from './Mobile';

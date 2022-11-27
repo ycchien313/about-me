@@ -5,7 +5,7 @@ export const MobileContext = createContext({
   isMobile: false,
 });
 
-export default ({ children }: { children: ReactElement }): JSX.Element => {
+export const MobileProvider = ({ children }: { children: ReactElement }): JSX.Element => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const value = { isMobile };

@@ -1,5 +1,5 @@
 
-import { MobileContext } from 'contexts/Mobile/Mobile';
+import { MobileContext } from 'contexts/Mobile';
 import { ReactElement, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Code, Email, Folder, Menu, MilitaryTech, Luggage } from '@mui/icons-material';

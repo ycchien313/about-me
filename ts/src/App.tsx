@@ -1,8 +1,8 @@
 import { ReactElement } from 'react';
-import { theme } from 'theme';
-import { MobileProvider } from './contexts';
+import { MobileProvider } from './contexts/Mobile';
 import { ThemeProvider } from '@mui/material';
 import { Router } from '@/router';
+import { theme } from '@/theme';
 
 function App(): ReactElement {
   return (

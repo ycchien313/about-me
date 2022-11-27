@@ -25,7 +25,7 @@
       "pages/*": ["src/pages/*"],
       "router/*": ["src/router/*"],
       "sections/*": ["src/sections/*"],
-      "theme": ["src/theme"],
+      "theme/*": ["src/theme/*"],
     },
   },
   // 以下副檔名皆進行編譯

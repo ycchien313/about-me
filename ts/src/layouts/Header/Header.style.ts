@@ -1,5 +1,5 @@
-import { MobileContext } from 'contexts/Mobile/Mobile';
 import { useContext } from 'react';
+import { MobileContext } from '@/contexts';
 import { Stack, styled, Typography } from '@mui/material';
 
 export const StyledNavbar = styled('div')(() => ({
