@@ -19,6 +19,10 @@ const ROUTES: RouteObject[] = [
         element: <Home />,
         path: 'skills',
       },
+      {
+        element: <Home />,
+        path: 'works',
+      },
     ]
   },
   {

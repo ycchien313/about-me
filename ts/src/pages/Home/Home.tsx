@@ -1,10 +1,11 @@
 import { ReactElement, useEffect, useRef } from 'react';
-import { Banner, Skills } from '@/sections';
+import { Banner, Skills, Works } from '@/sections';
 
 export default (): ReactElement => {
   const { pathname } = location;
   const homeRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
+  const worksRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     switch (pathname) {
@@ -12,8 +13,8 @@ export default (): ReactElement => {
         return homeRef.current?.scrollIntoView({ behavior: 'smooth' });
       case '/skills':
         return skillsRef.current?.scrollIntoView({ behavior: 'smooth' });
-      // case '/works':
-      //   return worksRef.current.scrollIntoView({ behavior: 'smooth' });
+      case '/works':
+        return worksRef.current?.scrollIntoView({ behavior: 'smooth' });
       // case '/experiences':
       //   return experiencesRef.current.scrollIntoView({ behavior: 'smooth' });
       // case '/certificates':
@@ -30,7 +31,7 @@ export default (): ReactElement => {
       {/* TODO: 建立 session component */}
       <Banner />
       <Skills ref={skillsRef} />
-      {/* <Works /> */}
+      <Works ref={worksRef} />
       {/* <Experiences /> */}
       {/* <Certificates /> */}
       {/* <Contact /> */}

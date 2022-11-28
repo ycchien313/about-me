@@ -1,4 +1,4 @@
-import { forwardRef, ReactElement, ReactNode } from 'react';
+import { forwardRef } from 'react';
 import { StyledSectionTitle } from '../common.style';
 import {
   StyledRoot,
@@ -9,7 +9,7 @@ import {
 } from './Skills.style';
 
 type TProps = {
-  children?: ReactNode;
+  children?: JSX.Element;
 };
 
 const TITLE = 'SKILLS';
@@ -47,7 +47,7 @@ const SKILLS = {
   ],
 };
 
-export default forwardRef<HTMLDivElement, TProps>((props, ref): ReactElement => {
+export default forwardRef<HTMLDivElement, TProps>((props, ref): JSX.Element => {
   return (
     <StyledRoot ref={ref}>
       <StyledSectionTitle>{TITLE}</StyledSectionTitle>
