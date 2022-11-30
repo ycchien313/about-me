@@ -23,6 +23,18 @@ const ROUTES: RouteObject[] = [
         element: <Home />,
         path: 'works',
       },
+      {
+        element: <Home />,
+        path: 'experiences',
+      },
+      {
+        element: <Home />,
+        path: 'certificates',
+      },
+      {
+        element: <Home />,
+        path: 'contact',
+      },
     ]
   },
   {
