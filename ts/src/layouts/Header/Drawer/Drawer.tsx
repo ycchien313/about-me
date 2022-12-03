@@ -22,27 +22,27 @@ export default (): ReactElement => {
   };
 
   const clickSkills = (): void => {
-    navigate('/skills');
+    navigate('/skills', { state: { isClickNav: true }});
     toggleDrawer();
   };
 
   const clickWorks = (): void => {
-    navigate('/works');
+    navigate('/works', { state: { isClickNav: true }});
     toggleDrawer();
   };
 
   const clickExperiences = (): void => {
-    navigate('/experiences');
+    navigate('/experiences', { state: { isClickNav: true }});
     toggleDrawer();
   };
 
   const clickCertificates = (): void => {
-    navigate('/certificates');
+    navigate('/certificates', { state: { isClickNav: true }});
     toggleDrawer();
   };
 
   const clickContact = (): void => {
-    navigate('/contact');
+    navigate('/contact', { state: { isClickNav: true }});
     toggleDrawer();
   };
 

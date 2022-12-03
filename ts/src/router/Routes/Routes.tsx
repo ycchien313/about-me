@@ -1,5 +1,5 @@
-import { lazy, ReactElement} from 'react';
-import { RouteObject, useRoutes } from 'react-router-dom';
+import { lazy, ReactElement, useEffect} from 'react';
+import { RouteObject, useNavigate, useRoutes } from 'react-router-dom';
 import { LayoutBase } from '@/layouts';
 
 const Home = lazy(() => import('@/pages/Home/Home'));
@@ -42,5 +42,11 @@ const ROUTES: RouteObject[] = [
 
 export default (): ReactElement | null => {
   const routes = useRoutes(ROUTES);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate('/');
+  }, []);
+
   return routes;
 };

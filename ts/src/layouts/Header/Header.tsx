@@ -1,6 +1,7 @@
 import { MobileContext } from 'contexts/Mobile';
 import { ReactElement, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useTheme } from '@mui/material';
 import {
   AppBar,
   Container,
@@ -20,8 +21,25 @@ const LOGO = 'YiChieh Chien';
 
 export default (): ReactElement => {
   const { isMobile } = useContext(MobileContext);
+  const { pathname } = useLocation();
+  const theme = useTheme();
   const navigate = useNavigate();
   const trigger = useScrollTrigger();
+
+  const getNavColor = (navName: string): string => {
+    if (navName !== pathname) return theme.palette.secondary.main;
+    switch (navName) {
+      case '/':
+      case '/skills':
+      case '/works':
+      case '/experiences':
+      case '/certificates':
+      case '/contact':
+        return theme.palette.primary.main;
+      default:
+        return theme.palette.secondary.main;
+    }
+  };
 
   return (
     <>
@@ -30,24 +48,39 @@ export default (): ReactElement => {
           <Container maxWidth="lg">
             <Toolbar>
               <StyledNavbar>
-                <StyledLogo onClick={() => navigate('/')}>{LOGO}</StyledLogo>
+                <StyledLogo onClick={() => navigate('/', { state: { isClickNav: true }})}>{LOGO}</StyledLogo>
                 {isMobile ? (
                   <Drawer />
                 ) : (
                   <StyledNavMenu>
-                    <StyledNavItem onClick={() => navigate('/skills')}>
+                    <StyledNavItem
+                      onClick={() => navigate('/skills', { state: { isClickNav: true }})}
+                      style={{ color: getNavColor('/skills') }}
+                    >
                       Skills
                     </StyledNavItem>
-                    <StyledNavItem onClick={() => navigate('/works')}>
+                    <StyledNavItem
+                      onClick={() => navigate('/works', { state: { isClickNav: true }})}
+                      style={{ color: getNavColor('/works') }}
+                    >
                       Works
                     </StyledNavItem>
-                    <StyledNavItem onClick={() => navigate('/experiences')}>
+                    <StyledNavItem
+                      onClick={() => navigate('/experiences', { state: { isClickNav: true }})}
+                      style={{ color: getNavColor('/experiences') }}
+                    >
                       Experiences
                     </StyledNavItem>
-                    <StyledNavItem onClick={() => navigate('/certificates')}>
+                    <StyledNavItem
+                      onClick={() => navigate('/certificates', { state: { isClickNav: true }})}
+                      style={{ color: getNavColor('/certificates') }}
+                    >
                       Certificates
                     </StyledNavItem>
-                    <StyledNavItem onClick={() => navigate('/contact')}>
+                    <StyledNavItem
+                      onClick={() => navigate('/contact', { state: { isClickNav: true }})}
+                      style={{ color: getNavColor('/contact') }}
+                    >
                       Contact
                     </StyledNavItem>
                   </StyledNavMenu>
