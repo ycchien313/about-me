@@ -25,7 +25,7 @@ export default (): ReactElement => {
         <StyledSubtitle>{SUBTITLE}</StyledSubtitle>
       </StyledTextWrapper>
       <div>
-        <StyledAction onClick={() => navigate('/skills')}>
+        <StyledAction onClick={() => navigate('/skills', { state: { isClickNav: true }})}>
           {ACTION_TEXT}
         </StyledAction>
       </div>
