@@ -1,11 +1,8 @@
-import { ReactElement } from 'react';
+import { lazy, ReactElement} from 'react';
 import { RouteObject, useRoutes } from 'react-router-dom';
 import { LayoutBase } from '@/layouts';
-import { Home } from '@/pages';
 
-// import { lazy, Suspense } from 'react';
-// const AbcPage = lazy(() => import('pages/Home/Home'));
-
+const Home = lazy(() => import('@/pages/Home/Home'));
 const ROUTES: RouteObject[] = [
   {
     path: '/',

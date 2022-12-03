@@ -1,14 +1,19 @@
+import { useContext } from 'react';
 import { Button, styled } from '@mui/material';
+import banner1 from '@/assets/banners/banner1.jpg';
+import { MobileContext } from '@/contexts';
 
 export const StyledRoot = styled('section')(() => {
+  const { isMobile } = useContext(MobileContext);
   const backgroundPositionTop = `${764 / 1100 * 100}%`;
 
   return {
     width: '100vw',
     height: '100vh',
   
-    backgroundImage: `url(${'https://drive.google.com/uc?export=view&id=1mw0HJhYcNLleO_N11OF0udQ7cjdElKln'})`,
-    backgroundPosition: `top ${backgroundPositionTop} center`,
+    // backgroundImage: `url(${'https://drive.google.com/uc?export=view&id=1mw0HJhYcNLleO_N11OF0udQ7cjdElKln'})`,
+    backgroundImage: `url(${banner1})`,
+    backgroundPosition: isMobile ? 'top 0% right 40%' : `top ${backgroundPositionTop} center`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
   
@@ -47,9 +52,9 @@ export const StyledSubtitle = styled('div')(() => ({
   lineHeight: 'initial',
 }));
 
-export const StyledAction = styled(Button)(() => ({
+export const StyledAction = styled(Button)(({ theme }) => ({
   '&.MuiButton-root': {
-    background: '#FE9010',
+    background: theme.palette.primary.main,
     borderRadius: '5px',
     boxShadow: '3px 10px 2px 1px rgba(0, 0, 0, 0.3)',
     color: '#FFF',

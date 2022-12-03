@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, Suspense } from 'react';
 import { MobileProvider } from './contexts/Mobile';
 import { ThemeProvider } from '@mui/material';
 import { Router } from '@/router';
@@ -8,7 +8,9 @@ function App(): ReactElement {
   return (
     <MobileProvider>
       <ThemeProvider theme={theme}>
-        <Router />
+        <Suspense fallback={<h1>loading...</h1>}>
+          <Router />
+        </Suspense>
       </ThemeProvider>
     </MobileProvider>
   );

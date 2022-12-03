@@ -24,10 +24,10 @@ export const StyledAccordion = styled(Accordion)(({ theme }) => ({
   transition: '0.2s',
 
   '&.MuiAccordion-root': {
-    ':first-child': {
+    ':first-of-type': {
       borderRadius: '10px 10px 0 0',
     },
-    ':last-child': {
+    ':last-of-type': {
       borderRadius: '0 0 10px 10px',
     },
     '&.Mui-expanded': {
