@@ -1,33 +1,46 @@
+import bootstrapSvg from '@/assets/images/bootstrap.svg';
+import cssSvg from '@/assets/images/css.svg';
+import htmlSvg from '@/assets/images/html.svg';
+import javascriptSvg from '@/assets/images/javascript.svg';
+import materialUiSvg from '@/assets/images/material-ui.svg';
+import reactSvg from '@/assets/images/react.svg';
+import typescriptSvg from '@/assets/images/typescript.svg';
+
+
 export const TITLE = 'SKILLS';
-export const CATEGORIES = ['Basic Tools', 'JS Framework', 'UI Framework'];
+export const CATEGORIES = ['Program Languages', 'JS Framework', 'UI Framework'];
 export const SKILLS = {
-  'Basic Tools': [
+  'Program Languages': [
     {
-      src: 'src/assets/images/html.svg',
-      name: 'HTMl',
+      src: htmlSvg,
+      name: 'HTML',
     },
     {
-      src: 'src/assets/images/css.svg',
+      src: cssSvg,
       name: 'CSS',
     },
     {
-      src: 'src/assets/images/javascript.svg',
+      src: javascriptSvg,
       name: 'JavaScript',
+    },
+    {
+      src: typescriptSvg,
+      name: 'TypeScript',
     },
   ],
   'JS Framework': [
     {
-      src: 'src/assets/images/react.svg',
+      src: reactSvg,
       name: 'React',
     },
   ],
   'UI Framework': [
     {
-      src: 'src/assets/images/bootstrap.svg',
+      src: bootstrapSvg,
       name: 'Bootstrap',
     },
     {
-      src: 'src/assets/images/material-ui.svg',
+      src: materialUiSvg,
       name: 'Material-UI',
     },
   ],

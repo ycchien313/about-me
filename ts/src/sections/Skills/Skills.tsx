@@ -7,6 +7,8 @@ import {
   StyledBox,
   StyledBoxTitle,
   StyledBoxFigure,
+  StyledBoxIcon,
+  StyledIcon,
 } from './Skills.style';
 
 type TProps = {
@@ -24,7 +26,9 @@ export default forwardRef<HTMLDivElement, TProps>((props, ref): JSX.Element => {
             <div>
               {SKILLS[category as keyof typeof SKILLS].map((skill, index) => (
                 <StyledBoxFigure key={index}>
-                  <img src={skill.src} alt="react" style={{ height: '100%' }} />
+                  <StyledBoxIcon>
+                    <StyledIcon src={skill.src} alt="react" />
+                  </StyledBoxIcon>
                   <figcaption>{skill.name}</figcaption>
                 </StyledBoxFigure>
               ))}

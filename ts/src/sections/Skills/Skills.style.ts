@@ -34,6 +34,12 @@ export const StyledBoxFigure = styled('figure')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   gap: '10px',
-  height: '30px',
   color: theme.palette.secondary.main,
+  margin: '10px',
+}));
+export const StyledBoxIcon = styled('div')(() => ({
+  width: '30px',
+}));
+export const StyledIcon = styled('img')(() => ({
+  width: '100%',
 }));
