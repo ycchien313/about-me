@@ -8,7 +8,7 @@ function App(): ReactElement {
   return (
     <MobileProvider>
       <ThemeProvider theme={theme}>
-        <Suspense fallback={<h1>loading...</h1>}>
+        <Suspense fallback={<div>loading...</div>}>
           <Router />
         </Suspense>
       </ThemeProvider>

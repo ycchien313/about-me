@@ -4,8 +4,10 @@
   line-height: 24px;
   font-weight: 400;
 
+  background: #FFF;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  /* color: rgba(255, 255, 255, 0.87); */
+  color: #011E51;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

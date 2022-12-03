@@ -35,7 +35,7 @@ export const StyledDivider = styled(Divider)(() => {
     width: '1px',
     background: '#CCC',
     borderRadius: '10%',
-    margin: isMobile ? '0 30px 0 60px' : '0 60px 0 80px',
+    margin: isMobile ? '0 20px 0 26.6px' : '0 60px 0 80px',
   };
 });
 
@@ -43,7 +43,7 @@ export const StyledAchievement = styled(Stack)(() => {
   const { isMobile } = useContext(MobileContext);
   return {
     flex: isMobile ? '1' : '0.6',
-    fontSize: '1rem',
+    fontSize: isMobile ? '0.8rem' : '1.2rem',
   };
 });
 
