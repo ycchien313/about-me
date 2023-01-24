@@ -20,7 +20,7 @@ export const EXPERIENCES = [
   },
   {
     id: 4,
-    year: '2022',
+    year: '2021',
     title: '萬通教育股份有限公司',
     subtitle: 'FrontEnd Engineer',
   },

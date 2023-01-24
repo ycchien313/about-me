@@ -1,9 +1,21 @@
 import { forwardRef, useEffect, useState } from 'react';
 import { ExpandMore, GitHub, ImportContacts } from '@mui/icons-material';
-import { CardActions, CardContent, Collapse, IconButton, Typography } from '@mui/material';
+import {
+  CardActions,
+  CardContent,
+  Collapse,
+  IconButton,
+  Typography,
+} from '@mui/material';
 import { StyledSectionTitle } from '../common.style';
 import { CARDS, TITLE } from './Works.constant';
-import { StyledCard, StyledCardMedia, StyledCardWrapper, StyledIconButtonExpandMore, StyledRoot } from './Works.style';
+import {
+  StyledCard,
+  StyledCardMedia,
+  StyledCardWrapper,
+  StyledIconButtonExpandMore,
+  StyledRoot,
+} from './Works.style';
 
 export default forwardRef<HTMLDivElement>((props, ref): JSX.Element => {
   const [isExpanded, setIsExpanded] = useState<number[]>([]);
@@ -23,21 +35,31 @@ export default forwardRef<HTMLDivElement>((props, ref): JSX.Element => {
     <StyledRoot ref={ref}>
       <StyledSectionTitle>{TITLE}</StyledSectionTitle>
       <StyledCardWrapper>
-        {CARDS.map(({ alt, description, github, image, pdf, title }, index) => (
+        {CARDS.map(({ alt, description, github, image, detail, title }, index) => (
           <StyledCard key={index}>
             <StyledCardMedia
-              component='img'
+              component="img"
               image={image}
               alt={alt}
               sx={{ maxHeight: '300px', objectPosition: 'top' }}
             />
-            <CardActions>
-              <IconButton aria-label='github' onClick={()=>window.open(github, '_blank')}>
-                <GitHub />
-              </IconButton>
-              <IconButton aria-label='pdf' onClick={()=>window.open(pdf, '_blank')}>
-                <ImportContacts />
-              </IconButton>
+            <CardActions sx={{ justifyContent: 'flex-end' }}>
+              {github && (
+                <IconButton
+                  aria-label="github"
+                  onClick={() => window.open(github, '_blank')}
+                >
+                  <GitHub />
+                </IconButton>
+              )}
+              {detail && (
+                <IconButton
+                  aria-label="pdf"
+                  onClick={() => window.open(detail, '_blank')}
+                >
+                  <ImportContacts />
+                </IconButton>
+              )}
               <StyledIconButtonExpandMore
                 expanded={isExpanded[index]}
                 onClick={() => clickExpandMore(index)}
@@ -46,9 +68,13 @@ export default forwardRef<HTMLDivElement>((props, ref): JSX.Element => {
               </StyledIconButtonExpandMore>
             </CardActions>
             <Collapse in={isExpanded[index] ? true : false}>
-              <CardContent>
-                <Typography gutterBottom variant='h5'>{title}</Typography>
-                <Typography component='div' variant='body2'>{description}</Typography>
+              <CardContent sx={{ whiteSpace: 'break-spaces' }}>
+                <Typography gutterBottom variant="h5">
+                  {title}
+                </Typography>
+                <Typography component="div" variant="body2">
+                  {description}
+                </Typography>
               </CardContent>
             </Collapse>
           </StyledCard>
