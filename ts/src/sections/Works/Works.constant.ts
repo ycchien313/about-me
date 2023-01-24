@@ -4,6 +4,7 @@ import oneClassLiveBackstagePng from '@/assets/images/oneclass-live-backstage.pn
 import loginPagePng from '@/assets/images/login-page.png';
 import mfee16HomePng from '@/assets/images/mfee16-home.png';
 import mfee16MemberCenterPng from '@/assets/images/mfee16-member-center.png';
+import mfee16BackstagePng from '@/assets/images/mfee16-backstage.png';
 import { TCard } from './Works.type';
 
 export const TITLE = 'WORKS';
@@ -72,5 +73,24 @@ P.S. 如網站沒反應，請直接複製貼上 https://7zzeq.csb.app`,
     image: mfee16MemberCenterPng,
     detail: 'https://drive.google.com/file/d/1k5iN8DuKI04PF3FFI3M_u6Tj96egj2u3/view?usp=sharing',
     title: 'MFEE16 Member Center',
+  },
+  {
+    alt: 'mfee16 後台網站',
+    description:
+      `使用技術：
+HTML | CSS | Redux | Bootstrap | jQuery | PHP | MySQL\n
+專案簡述：
+負責訂位管理、資料庫大致之規劃
+
+1. 訂位資料之撈取 (ajax)
+因為資料庫有做正規化，因此訂位資料必須跟 member、seat、meal 等 table 做關聯，此部分於下 SQL 指令較為複雜。
+
+2. 檢視按鈕 (檢視詳細、修改資料、新增餐點)
+可以看到詳細的訂位資料，並且使用 modal 作為檢視視窗，其內可以修改及新增餐點資料。
+
+3. 刪除、復原
+訂位之 table 有設置 valid 欄位，藉此來達到刪除並且保留其資料，進而達到復原之功能。`,
+    image: mfee16BackstagePng,
+    title: 'mfee16 後台網站',
   },
 ];
